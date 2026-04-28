@@ -1,0 +1,20 @@
+@use '../variables.scss' as *;
+@use 'sass:map';
+
+:root[data-theme="default"] {
+  // 品牌色
+  --primary-color: #{map.get($tokens, primary)};
+  --primary-light: #{map.get($tokens, primary-light)};
+  --primary-dark: #{map.get($tokens, primary-dark)};
+
+  // 中性色
+  --bg-primary: #{map.get($neutral-tokens, bg-primary)};
+  --bg-secondary: #{map.get($neutral-tokens, bg-secondary)};
+  --text-primary: #{map.get($neutral-tokens, text-primary)};
+  --text-secondary: #{map.get($neutral-tokens, text-secondary)};
+  --border-color: #{map.get($neutral-tokens, border)};
+
+  // 阴影（亮色主题特有）
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+}

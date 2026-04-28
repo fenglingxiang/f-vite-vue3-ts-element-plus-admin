@@ -1,0 +1,27 @@
+gitignore
+# 依赖
+node_modules
+dist
+build
+coverage
+
+# 锁文件
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 日志
+*.log
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# IDE 配置
+.vscode
+.idea
+
+# 构建产物
+*.min.js
+*.min.css

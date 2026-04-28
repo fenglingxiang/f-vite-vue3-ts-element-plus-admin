@@ -1,0 +1,20 @@
+@use '../variables.scss' as *;
+@use 'sass:map';
+
+// ===== 暗色主题 =====
+:root[data-theme="dark"] {
+  --primary-color: #{map.get($tokens, primary-light)}; // 暗色下用更亮的紫
+  --primary-light: #{map.get($tokens, primary)};
+  --primary-dark: #{map.get($tokens, primary-dark)};
+
+  // 暗色中性色
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0b0;
+  --border-color: #2a2a3e;
+
+  // 暗色阴影（更微妙）
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+}

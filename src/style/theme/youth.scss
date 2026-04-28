@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+// ===== 青春主题（额外预设） =====
+:root[data-theme="youth"] {
+  --primary-color: #f97316; // 活力橙
+  --primary-light: #fb923c;
+  --primary-dark: #ea580c;
+  --secondary-color: #facc15; // 明黄
+
+  --bg-primary: #fff7ed;
+  --bg-secondary: #ffffff;
+  --text-primary: #431407;
+  --text-secondary: #9a3412;
+}
