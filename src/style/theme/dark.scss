@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 // ===== 暗色主题 =====
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --primary-color: #{map.get($tokens, primary-light)}; // 暗色下用更亮的紫
   --primary-light: #{map.get($tokens, primary)};
   --primary-dark: #{map.get($tokens, primary-dark)};

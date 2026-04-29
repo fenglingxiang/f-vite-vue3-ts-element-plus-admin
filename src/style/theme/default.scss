@@ -1,7 +1,7 @@
 @use '../variables.scss' as *;
 @use 'sass:map';
 
-:root[data-theme="default"] {
+:root[data-theme='default'] {
   // 品牌色
   --primary-color: #{map.get($tokens, primary)};
   --primary-light: #{map.get($tokens, primary-light)};

@@ -12,7 +12,7 @@ export default [
     meta: {
       icon: markRaw(HomeOutlined),
       title: '首页',
-      showRoot: true
+      showRoot: true,
     },
     children: [
       {

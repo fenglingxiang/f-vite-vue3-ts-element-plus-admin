@@ -1,3 +1,3 @@
 /* 1. 分别导入 Tailwind 的主题和工具类，跳过默认的全局 Preflight */
-@import "tailwindcss/theme";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/theme';
+@import 'tailwindcss/utilities';

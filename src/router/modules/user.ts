@@ -30,7 +30,7 @@ export default [
         meta: {
           title: '用户详情',
           hidden: true,
-          activeMenu: '/user/list'
+          activeMenu: '/user/list',
         },
       },
     ],

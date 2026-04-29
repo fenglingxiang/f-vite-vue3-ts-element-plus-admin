@@ -1,0 +1,53 @@
+name: 打包和部署 vue-app
+
+on: 
+  push
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env: 
+  TARGET: /var/www/html/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@4
+
+      - name: 安装pnpm
+        uses: pnpm/actions-setup@4
+        with: 
+          version: 9
+      
+      - name: 设置Node.js
+        uses: actions/setup-node@4
+        with: 
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: 安装依赖
+        run: pnpm ci
+      
+      - name: ts类型检查
+        run: npx vue-tsc --noEmit
+
+      - name: 打包
+        run: pnpm run build
+
+      - name: 部署到腾讯云
+        uses: applyboy@scp-action@0.1.7
+        with: 
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          source: 'dist/*'
+          target: ${{ env.TARGET }}
+          strip_components: 1,
+          rm: true
+      
+      - name: 部署成功通知
+        run: echo '☑️部署成功！时间：$(date)' 

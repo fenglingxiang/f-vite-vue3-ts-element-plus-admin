@@ -6,7 +6,7 @@
 interface ImportMetaEnv {
   readonly VITE_PORT: number;
   readonly VITE_AXIOS_TIME_OUT: number;
-  readonly VITE_AXIOS_BASE_URL: string
+  readonly VITE_AXIOS_BASE_URL: string;
 }
 
 interface ImportMeta {

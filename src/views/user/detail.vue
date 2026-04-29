@@ -1,13 +1,7 @@
 <template>
-  <div>
-    用户详情
-  </div>
+  <div>用户详情</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

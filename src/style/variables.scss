@@ -19,11 +19,11 @@ $neutral-tokens: (
 );
 
 // ===== 1. 品牌色 =====
-$primary-color: #7c3aed !default;       // 果冻紫
+$primary-color: #7c3aed !default; // 果冻紫
 $primary-light: #a78bfa !default;
 $primary-dark: #5b21b6 !default;
 
-$secondary-color: #06b6d4 !default;     // 活力青柠
+$secondary-color: #06b6d4 !default; // 活力青柠
 $secondary-light: #67e8f9 !default;
 $secondary-dark: #0891b2 !default;
 
@@ -50,15 +50,20 @@ $border-color: #e5e7eb !default;
 $divider-color: #f3f4f6 !default;
 
 // ===== 4. 字体系统 =====
-$font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif !default;
+$font-family-base:
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  sans-serif !default;
 $font-family-mono: 'JetBrains Mono', 'Fira Code', monospace !default;
 
-$font-size-xs: 12px;    // 12px
-$font-size-sm: 14px;   // 14px
-$font-size-base: 16px;     // 16px
-$font-size-lg: 18px;   // 18px
-$font-size-xl: 20;    // 20px
-$font-size-2xl: 24px;    // 24px
+$font-size-xs: 12px; // 12px
+$font-size-sm: 14px; // 14px
+$font-size-base: 16px; // 16px
+$font-size-lg: 18px; // 18px
+$font-size-xl: 20; // 20px
+$font-size-2xl: 24px; // 24px
 
 $font-weight-normal: 400;
 $font-weight-medium: 500;
@@ -71,30 +76,34 @@ $line-height-relaxed: 1.75;
 
 // ===== 5. 间距系统（基于 8px 网格） =====
 $spacing-0: 0;
-$spacing-1: 0.25rem;   // 4px
-$spacing-2: 0.5rem;    // 8px
-$spacing-3: 0.75rem;   // 12px
-$spacing-4: 1rem;      // 16px
-$spacing-5: 1.25rem;   // 20px
-$spacing-6: 1.5rem;    // 24px
-$spacing-8: 2rem;      // 32px
-$spacing-10: 2.5rem;   // 40px
-$spacing-12: 3rem;     // 48px
-$spacing-16: 4rem;     // 64px
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-3: 0.75rem; // 12px
+$spacing-4: 1rem; // 16px
+$spacing-5: 1.25rem; // 20px
+$spacing-6: 1.5rem; // 24px
+$spacing-8: 2rem; // 32px
+$spacing-10: 2.5rem; // 40px
+$spacing-12: 3rem; // 48px
+$spacing-16: 4rem; // 64px
 
 // ===== 6. 圆角 =====
 $radius-none: 0;
-$radius-sm: 6px;   // 6px
-$radius-md: 8px;     // 8px
-$radius-lg: 12px;    // 12px
-$radius-xl: 16px;       // 16px
-$radius-2xl: 24px;    // 24px
+$radius-sm: 6px; // 6px
+$radius-md: 8px; // 8px
+$radius-lg: 12px; // 12px
+$radius-xl: 16px; // 16px
+$radius-2xl: 24px; // 24px
 $radius-full: 9999px;
 
 // ===== 7. 阴影 =====
 $shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+$shadow-md:
+  0 4px 6px -1px rgb(0 0 0 / 0.05),
+  0 2px 4px -2px rgb(0 0 0 / 0.05);
+$shadow-lg:
+  0 10px 15px -3px rgb(0 0 0 / 0.05),
+  0 4px 6px -4px rgb(0 0 0 / 0.05);
 $shadow-glow: 0 0 15px rgba(124, 58, 237, 0.15);
 
 // ===== 8. 过渡动画 =====
