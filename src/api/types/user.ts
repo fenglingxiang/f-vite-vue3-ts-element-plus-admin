@@ -10,6 +10,4 @@ export interface UserInfo {
   id: number;
   username: string;
   password: string;
-  profile: any;
-  roles: any;
 }
