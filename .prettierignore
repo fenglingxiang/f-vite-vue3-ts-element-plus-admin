@@ -1,4 +1,7 @@
 gitignore
+.husky
+.github
+
 # 依赖
 node_modules
 dist

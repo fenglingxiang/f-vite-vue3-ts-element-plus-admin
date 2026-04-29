@@ -1,7 +1,7 @@
 name: 打包和部署 vue-app
 
 on: 
-  push
+  push:
     branches: [master]
   pull_request:
     branches: [master]
