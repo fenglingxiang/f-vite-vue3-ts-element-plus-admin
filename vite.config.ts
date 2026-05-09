@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
       Components({
         resolvers: [
           ElementPlusResolver({
-            importStyle: 'sass'
+            importStyle: 'sass',
           }),
           IconsResolver({
             enabledCollections: ['ep'],

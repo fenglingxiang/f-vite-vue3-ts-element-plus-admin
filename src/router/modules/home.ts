@@ -1,6 +1,6 @@
 import Layout from '@/layout/main.vue';
 import type { RouteRecordRaw } from 'vue-router';
-import { House } from "@element-plus/icons-vue"
+import { House } from '@element-plus/icons-vue';
 
 export default [
   {

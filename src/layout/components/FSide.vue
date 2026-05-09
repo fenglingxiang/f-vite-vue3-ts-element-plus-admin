@@ -8,7 +8,7 @@
       :style="{ width: logoSize, height: logoSize }"
       :src="Logo"
       fit="contain"
-      class="mt-4 mb-4 transition-width duration-300"
+      class="transition-width mt-4 mb-4 duration-300"
     />
     <el-scrollbar class="w-full flex-1">
       <el-menu

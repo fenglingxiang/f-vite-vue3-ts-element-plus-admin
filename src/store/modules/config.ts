@@ -5,7 +5,7 @@ export const useConfigStore = defineStore('config', () => {
   const isDark = ref<boolean>(false);
   const isCollapsed = ref<boolean>(false);
   const sideBarWidth = ref<string>('200px');
-  const logoSize = ref<string>('100px')
+  const logoSize = ref<string>('100px');
 
   const changeDark = () => {
     isDark.value = !isDark.value;

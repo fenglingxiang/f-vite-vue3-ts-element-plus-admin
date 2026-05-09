@@ -6,7 +6,11 @@
     >
       <template #roles="{ row }">
         <div class="flex flex-wrap items-center">
-          <el-tag v-for="item in row.roles" class="mr-0.5">{{ item }}</el-tag>
+          <el-tag
+            v-for="item in row.roles"
+            class="mr-0.5"
+            >{{ item }}</el-tag
+          >
         </div>
       </template>
     </FTable>
