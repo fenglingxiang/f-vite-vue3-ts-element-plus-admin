@@ -1,8 +1,6 @@
 import Layout from '@/layout/main.vue';
 import type { RouteRecordRaw } from 'vue-router';
-import { UserOutlined, SolutionOutlined } from '@antdv-next/icons';
-import { markRaw } from 'vue';
-
+import { User } from '@element-plus/icons-vue';
 export default [
   {
     path: '/user',
@@ -10,7 +8,7 @@ export default [
     redirect: '/user/list',
     name: 'User',
     meta: {
-      icon: markRaw(UserOutlined),
+      icon: User,
       title: '用户管理',
     },
     children: [
@@ -19,7 +17,6 @@ export default [
         component: () => import('@/views/user/list.vue'),
         name: 'UserList',
         meta: {
-          icon: markRaw(SolutionOutlined),
           title: '用户列表',
         },
       },

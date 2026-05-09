@@ -3,7 +3,9 @@ import { ref } from 'vue';
 
 export const useConfigStore = defineStore('config', () => {
   const isDark = ref<boolean>(false);
-  const collapsed = ref<boolean>(false);
+  const isCollapsed = ref<boolean>(false);
+  const sideBarWidth = ref<string>('200px');
+  const logoSize = ref<string>('100px')
 
   const changeDark = () => {
     isDark.value = !isDark.value;
@@ -11,12 +13,16 @@ export const useConfigStore = defineStore('config', () => {
   };
 
   const changeCollapsed = () => {
-    collapsed.value = !collapsed.value;
+    isCollapsed.value = !isCollapsed.value;
+    sideBarWidth.value = isCollapsed.value ? '65px' : '200px';
+    logoSize.value = isCollapsed.value ? '32px' : '100px';
   };
 
   return {
     isDark,
-    collapsed,
+    isCollapsed,
+    sideBarWidth,
+    logoSize,
     changeDark,
     changeCollapsed,
   };

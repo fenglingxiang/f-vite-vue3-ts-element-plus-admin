@@ -9,5 +9,8 @@ export interface GetUserParams {
 export interface UserInfo {
   id: number;
   username: string;
-  password: string;
+  gender: 0 | 1 | 2;
+  avatar: string;
+  address: string;
+  roles: string[];
 }

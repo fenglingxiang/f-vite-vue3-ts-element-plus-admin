@@ -1,5 +1,5 @@
 <template>
-  <a-breadcrumb
+  <el-breadcrumb
     class="mt-4 mb-4"
     :items="breadcrumbItems"
   >
@@ -12,7 +12,7 @@
       </RouterLink>
       <span v-else>{{ route.title }}</span>
     </template>
-  </a-breadcrumb>
+  </el-breadcrumb>
 </template>
 
 <script setup lang="ts">

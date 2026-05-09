@@ -1,7 +1,6 @@
 import Layout from '@/layout/main.vue';
 import type { RouteRecordRaw } from 'vue-router';
-import { HomeOutlined } from '@antdv-next/icons';
-import { markRaw } from 'vue';
+import { House } from "@element-plus/icons-vue"
 
 export default [
   {
@@ -10,7 +9,7 @@ export default [
     redirect: '/home',
     name: 'Home',
     meta: {
-      icon: markRaw(HomeOutlined),
+      icon: House,
       title: '首页',
       showRoot: true,
     },
@@ -19,7 +18,7 @@ export default [
         path: 'home',
         component: () => import('@/views/home/index.vue'),
         meta: {
-          icon: markRaw(HomeOutlined),
+          icon: House,
           title: '首页',
         },
       },

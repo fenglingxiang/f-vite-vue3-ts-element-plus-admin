@@ -5,3 +5,11 @@ export interface ApiResponseData<T> {
   data: T;
   msg: string;
 }
+
+export interface PaginationData<T> {
+  page: number;
+  limit: number;
+  total: number;
+  list: T[];
+  totalPage: number;
+}

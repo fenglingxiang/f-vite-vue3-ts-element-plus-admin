@@ -3,8 +3,8 @@ import App from './App.vue';
 import { setupRouter } from './router';
 import { steupStore } from './store';
 import 'normalize.css';
-import '@/style/index.scss';
 import '@/style/tailwind.css';
+import '@/style/index.scss';
 import '@/permission';
 
 function bootstrap() {

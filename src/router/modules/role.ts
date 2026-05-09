@@ -1,7 +1,6 @@
 import Layout from '@/layout/main.vue';
 import type { RouteRecordRaw } from 'vue-router';
-import { UserSwitchOutlined, SolutionOutlined } from '@antdv-next/icons';
-import { markRaw } from 'vue';
+import { Male } from '@element-plus/icons-vue';
 
 export default [
   {
@@ -10,7 +9,7 @@ export default [
     redirect: '/role/list',
     name: 'Role',
     meta: {
-      icon: markRaw(UserSwitchOutlined),
+      icon: Male,
       title: '角色管理',
     },
     children: [
@@ -19,7 +18,6 @@ export default [
         component: () => import('@/views/role/list.vue'),
         name: 'RoleList',
         meta: {
-          icon: markRaw(SolutionOutlined),
           title: '角色列表',
         },
       },

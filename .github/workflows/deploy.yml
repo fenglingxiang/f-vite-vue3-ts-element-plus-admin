@@ -58,4 +58,4 @@ jobs:
           rm: true
       
       - name: 部署成功通知
-        run: echo "☑️部署成功！时间：$(date +'%Y-%m-%d %h:%M:%S')" 
+        run: echo "☑️部署成功！时间：$(date +'%Y-%m-%d %H:%M:%S')" 
