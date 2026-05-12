@@ -1,0 +1,48 @@
+image: node:20
+
+stages:
+  - build
+  - deploy
+
+variables:
+  PNPM_HOME: /root/.local/share/pnpm
+  PNPM_VERSION: '10.26.0'
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@${PNPM_VERSION} --activate
+
+build:
+  stage: build
+  script:
+    - pnpm config set store-dir .pnpm-store
+    - pnpm install --frozen-lockfile
+    - npx vue-tsc --noEmit
+    - pnpm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 day
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - when: never
+
+deploy:
+  stage: deploy
+  needs: [build]
+  before_script:
+    - command -v sshpass || apt-get update && apt-get install -y sshpass
+  script:
+    - sshpass -p "${SERVER_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} "rm -rf /www/wwwroot/nestjs-frontend/*"
+    - sshpass -p "${SERVER_PASSWORD}" scp -o StrictHostKeyChecking=no -r dist/* ${SERVER_USER}@${SERVER_HOST}:/www/wwwroot/nestjs-frontend/
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+  when: manual

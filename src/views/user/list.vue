@@ -13,7 +13,26 @@
           >
         </div>
       </template>
+      <template #footerColumn>
+        <el-table-column label="操作">
+          <template #default="{ row }">
+            <el-button @click="handleEdit(row)"> 编辑 </el-button>
+            <el-button
+              type="danger"
+              @click="handleDelete(row)"
+            >
+              删除
+            </el-button>
+          </template>
+        </el-table-column>
+      </template>
     </FTable>
+
+    <create-or-update-user-dialog
+      v-model:visible="isVisible"
+      :type="type"
+      :user-info="curUserInfo"
+    />
   </div>
 </template>
 
@@ -22,12 +41,14 @@ import FTable from '@/components/FTable/index.vue';
 import type { UserInfo } from '@/api/types/user';
 import { getUserList } from '@/api/modules/user';
 import type { TableColumn } from '@/components/types/table';
+import CreateOrUpdateUserDialog from './components/CreateOrUpdateUserDialog.vue';
+import { OperationType } from '@/constants/operation';
 
 defineOptions({
   name: 'UserList',
 });
 
-const columns = ref<TableColumn<UserInfo>[]>([
+const columns: TableColumn<UserInfo>[] = [
   {
     label: 'ID',
     prop: 'id',
@@ -66,9 +87,20 @@ const columns = ref<TableColumn<UserInfo>[]>([
     label: '角色',
     prop: 'roles',
   },
-]);
+];
 const list = ref<UserInfo[]>([]);
 const loading = ref<boolean>(false);
+const isVisible = ref<boolean>(false);
+const type = ref<keyof typeof OperationType>('create');
+const curUserInfo = ref<UserInfo>({} as UserInfo);
+
+const handleEdit = (row: UserInfo) => {
+  isVisible.value = true;
+  type.value = OperationType.edit;
+  curUserInfo.value = row;
+};
+
+const handleDelete = (row: UserInfo) => {};
 
 onMounted(() => {
   loading.value = true;
